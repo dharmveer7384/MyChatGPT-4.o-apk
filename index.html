@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My App — Official APK Download</title>
+  <meta name="description" content="Official landing page to download the latest Android APK for My App." />
+  <meta property="og:title" content="My App — Official APK Download" />
+  <meta property="og:description" content="Fast, safe, and ad-free APK downloads with release notes and checksum verification." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🤖</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { backdrop-filter: blur(12px); background: rgba(255,255,255,0.06); }
+    .gradient { background: radial-gradient(1200px 600px at 10% -10%, #22d3ee33, transparent 60%),
+                              radial-gradient(1000px 500px at 90% 10%, #a78bfa33, transparent 55%),
+                              linear-gradient(135deg,#0b1220,#0f172a); }
+  </style>
+</head>
+<body class="min-h-screen text-slate-100 bg-slate-950 selection:bg-fuchsia-500/30">
+  <!-- Header -->
+  <header class="gradient border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs tracking-widest uppercase text-slate-200/80">Official Download</p>
+        <h1 class="mt-2 text-4xl md:text-5xl font-extrabold leading-tight">My ChatGPT-4.O</h1>
+        <p class="mt-4 text-slate-100/90 text-lg">Fast, safe, and ad-free. Get the latest build directly from our servers.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-900/90">
+          <span class="px-3 py-1 rounded-full bg-white/80">v<span id="ver">1.0.0</span></span>
+          <span class="px-3 py-1 rounded-full bg-white/80">Size: <span id="size">19.4 MB</span></span>
+          <span class="px-3 py-1 rounded-full bg-white/80">Updated: <time id="updated" datetime="2025-08-01">Aug 1, 2025</time></span>
+          <span class="px-3 py-1 rounded-full bg-white/80">Android 7.0+</span>
+        </div>
+        <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <a id="downloadBtn" href="#" download class="inline-flex justify-center items-center gap-2 rounded-2xl px-6 py-4 font-semibold bg-fuchsia-500/90 hover:bg-fuchsia-400/90 text-slate-900 shadow-lg shadow-fuchsia-500/20 ring-1 ring-white/10 transition">Download APK</a>
+          <a id="mirrorBtn" href="#" class="inline-flex justify-center items-center rounded-2xl px-6 py-4 font-medium ring-1 ring-white/10 bg-white/10 hover:bg-white/15 transition">Mirror</a>
+        </div>
+      </div>
+      <div class="w-full md:w-80 md:justify-self-end">
+        <div class="bg-white rounded-3xl p-5 mx-auto w-60 h-60" id="qr"></div>
+        <p class="text-center text-sm mt-2 opacity-90">Scan to download on mobile</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12 grid lg:grid-cols-3 gap-8">
+    <section class="lg:col-span-2 space-y-6">
+      <!-- How to Install with Images -->
+      <div class="glass rounded-3xl p-6 ring-1 ring-white/10">
+        <h3 class="text-xl font-bold mb-3">How to Install</h3>
+        <ol class="list-decimal pl-5 space-y-6 text-slate-200/90">
+          <li>
+            After the download completes, Install ChatGPT-4.O apk on your phone <em>Install</em>.
+            <img src="images/install-step1.jpg" alt="Step 1 - Open the APK file" class="mt-2 rounded-lg border border-white/10" />
+          </li>
+          <li>
+            Allow <strong>If ChatGPT-4.O apk not install!</strong> Go to playstore and click on your profile.
+            <img src="images/install-step2.jpg" alt="Step 2 - Allow unknown apps" class="mt-2 rounded-lg border border-white/10" />
+          </li>
+          <li>
+            Go to in Play Protection setting <em> click on Settings icon </em>.
+            <img src="images/install-step3.jpg" alt="Step 3 - Chrome settings" class="mt-2 rounded-lg border border-white/10" />
+          </li>
+          <li>
+            and turn of Scan apps with Play Protection & Important harmful app detection.
+            <img src="images/install-step4.jpg" alt="Step 4 - Open the app" class="mt-2 rounded-lg border border-white/10" />
+          </li>
+        </li>
+            Again install ChatGPT-4.O apk on your phone <em> ChatGPT-4.O apk Installation successful </em>.
+            <img src="images/install-step5.jpg" alt="Step 5 - turn off settings" class="mt-2 rounded-lg border border-white/10" />
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script>
+    const APK_URL = 'https://github.com/dharmveer7384/My-ChatGPT-4.o-apk/releases/download/v1.0.0/ChatGPT-4o.v.1.0.b.1.minSDK28.MultiPatch.apk';
+    document.getElementById('downloadBtn').href = APK_URL;
+    if (window.QRCode) {
+      QRCode.toCanvas(document.getElementById('qr'), APK_URL, { width: 220, margin: 1 });
+    }
+  </script>
+</body>
+</html>
